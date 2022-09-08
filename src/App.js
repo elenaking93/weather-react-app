@@ -29,7 +29,7 @@ function App() {
         <div className="creator">
           <p>
             <a
-              href="https://github.com/elenaking93/my-weather-application"
+              href="https://github.com/elenaking93/weather-react-app"
               target="_blank"
               rel="noreferrer"
             >
