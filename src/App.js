@@ -35,7 +35,7 @@ function App() {
             >
               Open-source code
             </a>
-            by Elena Korol
+            {""} by Elena Korol
           </p>
         </div>
       </div>
