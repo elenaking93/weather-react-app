@@ -50,9 +50,10 @@ export default function TodayForecast() {
     );
   } else {
     let apiKey = "548840c634f3a0cc99d8d8ba9e5b649d";
-    let city = "Kyiv";
+    let city = "New York";
     let units = "metric";
     let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
     axios.get(url).then(showWeather);
+    return "Loading...";
   }
 }
