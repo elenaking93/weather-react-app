@@ -29,8 +29,8 @@ export default function TodayForecast(props) {
             <div className="sky-state text-capitalize">
               {props.data.skyState}
             </div>
-            <div className="humidity">{props.data.humidity}%</div>
-            <div className="wind">{props.data.wind} m/s</div>
+            <div className="humidity">Humidity {props.data.humidity}%</div>
+            <div className="wind">Wind {props.data.wind} m/s</div>
           </div>
         </div>
       </div>
