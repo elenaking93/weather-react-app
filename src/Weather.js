@@ -4,8 +4,9 @@ import TodayForecast from "./TodayForecast";
 import FormattedDate from "./FormattedDate";
 import axios from "axios";
 
-export default function Weather() {
+export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
+  const [city, setCity] = useState(props.defaultCity);
   function handleResponse(response) {
     console.log(response.data);
     setWeatherData({
@@ -19,6 +20,20 @@ export default function Weather() {
       iconURL: "",
     });
   }
+  function handleSubmit(event) {
+    event.preventDefault();
+    search();
+  }
+
+  function handleCityChange(event) {
+    setCity(event.target.value);
+  }
+  function search() {
+    let apiKey = "548840c634f3a0cc99d8d8ba9e5b649d";
+    let units = "metric";
+    let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
+    axios.get(url).then(handleResponse);
+  }
   if (weatherData.ready) {
     return (
       <div>
@@ -28,8 +43,13 @@ export default function Weather() {
             <FormattedDate date={weatherData.date} />
           </div>
           <div className="search">
-            <form className="search-city">
-              <input type="text" placeholder="Search city" id="search-city" />
+            <form className="search-city" onSubmit={handleSubmit}>
+              <input
+                type="text"
+                placeholder="Search city"
+                id="search-city"
+                onChange={handleCityChange}
+              />
               <input
                 className="search-button"
                 type="submit"
@@ -54,11 +74,7 @@ export default function Weather() {
       </div>
     );
   } else {
-    let apiKey = "548840c634f3a0cc99d8d8ba9e5b649d";
-    let city = "London";
-    let units = "metric";
-    let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
-    axios.get(url).then(handleResponse);
+    search();
     return "Loading...";
   }
 }
