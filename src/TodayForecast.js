@@ -19,7 +19,11 @@ export default function TodayForecast(props) {
             </div>
           </div>
           <div className="col-4 today-image">
-            <img src={props.data.iconURL} alt="" id="today-icon" />
+            <img
+              src={props.data.icon}
+              alt={props.data.description}
+              id="today-icon"
+            />
           </div>
           <div className="col-4">
             <div className="sky-state text-capitalize">
