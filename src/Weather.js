@@ -11,7 +11,7 @@ export default function Weather(props) {
     console.log(response.data);
     setWeatherData({
       ready: true,
-      temperatureCelsius: response.data.main.temp,
+      temperature: response.data.main.temp,
       humidity: response.data.main.humidity,
       date: new Date(response.data.dt * 1000),
       skyState: response.data.weather[0].description,

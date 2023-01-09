@@ -1,4 +1,5 @@
 import React from "react";
+import WeatherTemperature from "./WeatherTemperature";
 
 export default function TodayForecast(props) {
   return (
@@ -7,16 +8,7 @@ export default function TodayForecast(props) {
         <div className="row today-weather">
           <div className="col-4">
             <div className="today">Today</div>
-            <div className="today-temperature">
-              <span id="current-temperature"></span>
-              <a href="/" id="celcium-temp" className="active">
-                {props.data.temperatureCelsius}°C
-              </a>{" "}
-              |
-              <a href="/" id="farenheit-temp">
-                {props.data.temperatureCelsius}°F
-              </a>
-            </div>
+            <WeatherTemperature celsius={props.data.temperature} />
           </div>
           <div className="col-4 today-image">
             <img
