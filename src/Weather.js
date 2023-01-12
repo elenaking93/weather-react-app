@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./App.css";
 import TodayForecast from "./TodayForecast";
 import FormattedDate from "./FormattedDate";
+import WeatherForecast from "./WeatherForecast";
 import axios from "axios";
 
 export default function Weather(props) {
@@ -70,7 +71,9 @@ export default function Weather(props) {
         <div className="future-forecast">
           <p>5-day forecast</p>
         </div>
-        <div className="weather-forecast" id="forecast"></div>
+        <div className="weather-forecast" id="forecast">
+          <WeatherForecast />
+        </div>
       </div>
     );
   } else {
