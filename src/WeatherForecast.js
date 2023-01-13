@@ -18,9 +18,18 @@ export default function WeatherForecast(props) {
     axios.get(apiUrl).then(handleResponse);
   }
   if (loaded) {
+    console.log(forecast);
     return (
-      <div className="WeatherForecast">
-        <WeatherForecastDay data={forecast} />
+      <div className="WeatherForecast row">
+        {forecast.map(function (dailyForecast, index) {
+          if (index < 5) {
+            return (
+              <div className="col-12 col-md day day1" key={index}>
+                <WeatherForecastDay data={dailyForecast} />
+              </div>
+            );
+          }
+        })}
       </div>
     );
   } else {
