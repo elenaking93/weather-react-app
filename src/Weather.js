@@ -58,10 +58,6 @@ export default function Weather(props) {
                 value="Let's go!"
               />
             </form>
-            <button className="current-location-button">
-              Current location
-              <i className="fa-solid fa-location-dot"></i>
-            </button>
           </div>
         </div>
         <div className="row justify-content-center">
