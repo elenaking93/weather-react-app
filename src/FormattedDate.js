@@ -9,7 +9,7 @@ export default function FormattedDate(props) {
     "Friday",
     "Saturday",
   ];
-  console.log(props);
+
   let day = days[props.date.getDay()];
   let hours = props.date.getHours();
   if (hours < 10) {

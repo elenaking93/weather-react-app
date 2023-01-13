@@ -22,7 +22,6 @@ export default function WeatherForecast(props) {
     axios.get(apiUrl).then(handleResponse);
   }
   if (loaded) {
-    console.log(forecast);
     return (
       <div className="WeatherForecast row">
         {forecast.map(function (dailyForecast, index) {
